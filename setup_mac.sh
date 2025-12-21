@@ -48,6 +48,15 @@ else
               ~/.vim/pack/bracketed-paste/start/vim-bracketed-paste
 fi
 
+# ctrlp.vimプラグインのインストール
+mkdir -p ~/.vim/pack/ctrlp/start
+if [ -d ~/.vim/pack/ctrlp/start/ctrlp.vim ]; then
+    echo "ctrlp.vim is already installed. Skipping..."
+else
+    git clone --depth=1 https://github.com/ctrlpvim/ctrlp.vim.git \
+              ~/.vim/pack/ctrlp/start/ctrlp.vim
+fi
+
 # テーマディレクトリの作成
 mkdir -p ~/.vim/colors
 

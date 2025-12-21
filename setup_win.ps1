@@ -46,6 +46,15 @@ if (Test-Path "$HOME\vimfiles\pack\bracketed-paste\start\vim-bracketed-paste") {
               "$HOME\vimfiles\pack\bracketed-paste\start\vim-bracketed-paste"
 }
 
+# ctrlp.vimプラグインのインストール
+New-Item -ItemType Directory -Force -Path "$HOME\vimfiles\pack\ctrlp\start"
+if (Test-Path "$HOME\vimfiles\pack\ctrlp\start\ctrlp.vim") {
+    Write-Host "ctrlp.vim is already installed. Skipping..."
+} else {
+    git clone --depth=1 https://github.com/ctrlpvim/ctrlp.vim.git `
+              "$HOME\vimfiles\pack\ctrlp\start\ctrlp.vim"
+}
+
 # テーマディレクトリの作成
 New-Item -ItemType Directory -Force -Path "$HOME\vimfiles\colors"
 
