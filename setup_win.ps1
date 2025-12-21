@@ -10,25 +10,52 @@ New-Item -ItemType Directory -Force -Path "$HOME\vimfiles\pack\smartpairs\start"
 
 # SnipMateプラグインのインストール
 Set-Location "$HOME\vimfiles\pack\SnipMate\start"
-git clone https://github.com/garbas/vim-snipmate.git
-git clone https://github.com/MarcWeber/vim-addon-mw-utils.git
-git clone https://github.com/tomtom/tlib_vim.git
+
+if (Test-Path "vim-snipmate") {
+    Write-Host "vim-snipmate is already installed. Skipping..."
+} else {
+    git clone https://github.com/garbas/vim-snipmate.git
+}
+
+if (Test-Path "vim-addon-mw-utils") {
+    Write-Host "vim-addon-mw-utils is already installed. Skipping..."
+} else {
+    git clone https://github.com/MarcWeber/vim-addon-mw-utils.git
+}
+
+if (Test-Path "tlib_vim") {
+    Write-Host "tlib_vim is already installed. Skipping..."
+} else {
+    git clone https://github.com/tomtom/tlib_vim.git
+}
 
 # vim-smartpairsプラグインのインストール
-git clone https://github.com/gosukiwi/vim-smartpairs.git `
-          "$HOME\vimfiles\pack\smartpairs\start\vim-smartpairs"
+if (Test-Path "$HOME\vimfiles\pack\smartpairs\start\vim-smartpairs") {
+    Write-Host "vim-smartpairs is already installed. Skipping..."
+} else {
+    git clone https://github.com/gosukiwi/vim-smartpairs.git `
+              "$HOME\vimfiles\pack\smartpairs\start\vim-smartpairs"
+}
 
 # vim-bracketed-pasteプラグインのインストール
 New-Item -ItemType Directory -Force -Path "$HOME\vimfiles\pack\bracketed-paste\start"
-git clone https://github.com/ConradIrwin/vim-bracketed-paste `
-          "$HOME\vimfiles\pack\bracketed-paste\start\vim-bracketed-paste"
+if (Test-Path "$HOME\vimfiles\pack\bracketed-paste\start\vim-bracketed-paste") {
+    Write-Host "vim-bracketed-paste is already installed. Skipping..."
+} else {
+    git clone https://github.com/ConradIrwin/vim-bracketed-paste `
+              "$HOME\vimfiles\pack\bracketed-paste\start\vim-bracketed-paste"
+}
 
 # テーマディレクトリの作成
 New-Item -ItemType Directory -Force -Path "$HOME\vimfiles\colors"
 
 # atom-dark-256テーマのダウンロード
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/gosukiwi/vim-atom-dark/refs/heads/master/colors/atom-dark-256.vim" `
-                  -OutFile "$HOME\vimfiles\colors\atom-dark-256.vim"
+if (Test-Path "$HOME\vimfiles\colors\atom-dark-256.vim") {
+    Write-Host "atom-dark-256 theme is already installed. Skipping..."
+} else {
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/gosukiwi/vim-atom-dark/refs/heads/master/colors/atom-dark-256.vim" `
+                      -OutFile "$HOME\vimfiles\colors\atom-dark-256.vim"
+}
 
 # .vimrcをコピー
 Copy-Item "$ScriptDir\.vimrc" "$HOME\_vimrc"

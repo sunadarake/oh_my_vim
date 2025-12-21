@@ -12,25 +12,52 @@ mkdir -p ~/.vim/pack/smartpairs/start
 
 # SnipMateプラグインのインストール
 cd ~/.vim/pack/SnipMate/start
-git clone https://github.com/garbas/vim-snipmate.git
-git clone https://github.com/MarcWeber/vim-addon-mw-utils.git
-git clone https://github.com/tomtom/tlib_vim.git
+
+if [ -d "vim-snipmate" ]; then
+    echo "vim-snipmate is already installed. Skipping..."
+else
+    git clone https://github.com/garbas/vim-snipmate.git
+fi
+
+if [ -d "vim-addon-mw-utils" ]; then
+    echo "vim-addon-mw-utils is already installed. Skipping..."
+else
+    git clone https://github.com/MarcWeber/vim-addon-mw-utils.git
+fi
+
+if [ -d "tlib_vim" ]; then
+    echo "tlib_vim is already installed. Skipping..."
+else
+    git clone https://github.com/tomtom/tlib_vim.git
+fi
 
 # vim-smartpairsプラグインのインストール
-git clone https://github.com/gosukiwi/vim-smartpairs.git \
-          ~/.vim/pack/smartpairs/start/vim-smartpairs
+if [ -d ~/.vim/pack/smartpairs/start/vim-smartpairs ]; then
+    echo "vim-smartpairs is already installed. Skipping..."
+else
+    git clone https://github.com/gosukiwi/vim-smartpairs.git \
+              ~/.vim/pack/smartpairs/start/vim-smartpairs
+fi
 
 # vim-bracketed-pasteプラグインのインストール
 mkdir -p ~/.vim/pack/bracketed-paste/start
-git clone https://github.com/ConradIrwin/vim-bracketed-paste \
-          ~/.vim/pack/bracketed-paste/start/vim-bracketed-paste
+if [ -d ~/.vim/pack/bracketed-paste/start/vim-bracketed-paste ]; then
+    echo "vim-bracketed-paste is already installed. Skipping..."
+else
+    git clone https://github.com/ConradIrwin/vim-bracketed-paste \
+              ~/.vim/pack/bracketed-paste/start/vim-bracketed-paste
+fi
 
 # テーマディレクトリの作成
 mkdir -p ~/.vim/colors
 
 # atom-dark-256テーマのダウンロード
-curl -o ~/.vim/colors/atom-dark-256.vim \
-     https://raw.githubusercontent.com/gosukiwi/vim-atom-dark/refs/heads/master/colors/atom-dark-256.vim
+if [ -f ~/.vim/colors/atom-dark-256.vim ]; then
+    echo "atom-dark-256 theme is already installed. Skipping..."
+else
+    curl -o ~/.vim/colors/atom-dark-256.vim \
+         https://raw.githubusercontent.com/gosukiwi/vim-atom-dark/refs/heads/master/colors/atom-dark-256.vim
+fi
 
 # .vimrcをコピー
 cp "$SCRIPT_DIR/.vimrc" ~/.vimrc
