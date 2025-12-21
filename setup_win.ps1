@@ -18,6 +18,11 @@ git clone https://github.com/tomtom/tlib_vim.git
 git clone https://github.com/gosukiwi/vim-smartpairs.git `
           "$HOME\vimfiles\pack\smartpairs\start\vim-smartpairs"
 
+# vim-bracketed-pasteプラグインのインストール
+New-Item -ItemType Directory -Force -Path "$HOME\vimfiles\pack\bracketed-paste\start"
+git clone https://github.com/ConradIrwin/vim-bracketed-paste `
+          "$HOME\vimfiles\pack\bracketed-paste\start\vim-bracketed-paste"
+
 # テーマディレクトリの作成
 New-Item -ItemType Directory -Force -Path "$HOME\vimfiles\colors"
 

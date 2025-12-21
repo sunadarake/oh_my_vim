@@ -29,6 +29,9 @@ Vimの初期設定を自動化するプロジェクト
 - **vim-smartpairs** - 括弧の自動補完
   https://github.com/gosukiwi/vim-smartpairs
 
+- **vim-bracketed-paste** - ペースト時の自動インデント防止
+  https://github.com/ConradIrwin/vim-bracketed-paste
+
 ## テーマ
 
 - **atom-dark-256** - Atomエディタ風のダークテーマ
