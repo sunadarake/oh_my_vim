@@ -84,7 +84,9 @@ let g:netrw_browse_split = 4
 set backspace=indent,eol,start
 
 " themeはatom-darkにする
+set t_Co=256
 colorscheme atom-dark-256
+
 " Snippet プラグインをパワーアップする
 let g:snipMate = { 'snippet_version' : 1 }
 
