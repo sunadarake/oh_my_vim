@@ -1,89 +1,89 @@
 
-"�����R�[�h��UFT-8�ɐݒ�
+"文字コードをUFT-8に設定
 set fenc=utf-8
-" �o�b�N�A�b�v�t�@�C�������Ȃ�
+" バックアップファイルを作らない
 set nobackup
-" �X���b�v�t�@�C�������Ȃ�
+" スワップファイルを作らない
 set noswapfile
-" �ҏW���̃t�@�C�����ύX���ꂽ�玩���œǂݒ���
+" 編集中のファイルが変更されたら自動で読み直す
 set autoread
-" �o�b�t�@���ҏW���ł����̑��̃t�@�C�����J����悤��
+" バッファが編集中でもその他のファイルを開けるように
 set hidden
-" ���͒��̃R�}���h���X�e�[�^�X�ɕ\������
+" 入力中のコマンドをステータスに表示する
 set showcmd
 
 
-" �����ڌn
-" �s�ԍ���\��
+" 見た目系
+" 行番号を表示
 set number
-" ���݂̍s�������\��
+" 現在の行を強調表示
 set cursorline
-" ���݂̍s�������\���i�c�j
+" 現在の行を強調表示（縦）
 set cursorcolumn
-" �s����1������܂ŃJ�[�\�����ړ��ł���悤��
+" 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
-" �C���f���g�̓X�}�[�g�C���f���g
+" インデントはスマートインデント
 set smartindent
-" �r�[�v��������
+" ビープ音を可視化
 set visualbell
-" ���ʓ��͎��̑Ή����銇�ʂ�\��
+" 括弧入力時の対応する括弧を表示
 set showmatch
-" �X�e�[�^�X���C������ɕ\��
+" ステータスラインを常に表示
 set laststatus=2
-" �R�}���h���C���̕⊮
+" コマンドラインの補完
 set wildmode=list:longest
-" leader�L�[���J���}�ɐݒ�
+" leaderキーをカンマに設定
 let mapleader=","
 
-" �܂�Ԃ����ɕ\���s�P�ʂł̈ړ��ł���悤�ɂ���
+" 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
-" �V���^�b�N�X�n�C���C�g�̗L����
+" シンタックスハイライトの有効化
 syntax enable
 
-" Tab�n
-" �s������������(�^�u���u?-�v�ƕ\�������)
+" Tab系
+" 不可視文字を可視化(タブが「?-」と表示される)
 set list listchars=tab:\?\-
-" Tab�����𔼊p�X�y�[�X�ɂ���
+" Tab文字を半角スペースにする
 set expandtab
-" �s���ȊO��Tab�����̕\�����i�X�y�[�X�������j
+" 行頭以外のTab文字の表示幅（スペースいくつ分）
 set tabstop=2
-" �s���ł�Tab�����̕\����
+" 行頭でのTab文字の表示幅
 set shiftwidth=2
 
 
-" �����n
-" ���������񂪏������̏ꍇ�͑啶������������ʂȂ���������
+" 検索系
+" 検索文字列が小文字の場合は大文字小文字を区別なく検索する
 set ignorecase
-" ����������ɑ啶�����܂܂�Ă���ꍇ�͋�ʂ��Č�������
+" 検索文字列に大文字が含まれている場合は区別して検索する
 set smartcase
-" ������������͎��ɏ����Ώە�����Ƀq�b�g������
+" 検索文字列入力時に順次対象文字列にヒットさせる
 set incsearch
-" �������ɍŌ�܂ōs������ŏ��ɖ߂�
+" 検索時に最後まで行ったら最初に戻る
 set wrapscan
-" ��������n�C���C�g�\��
+" 検索語をハイライト表示
 set hlsearch
-" ESC�A�łŃn�C���C�g����
+" ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
-" -la�̂悤�ȕ\���ɂȂ�܂�
+" -laのような表示になります
 let g:netrw_liststyle=1
-" �w�b�_���\���ɂ���
+" ヘッダを非表示にする
 let g:netrw_banner=0
-" �T�C�Y��(K,M,G)�ŕ\������
+" サイズを(K,M,G)で表示する
 let g:netrw_sizestyle="H"
-" ���t�t�H�[�}�b�g�� yyyy/mm/dd(�j��) hh:mm:ss �ŕ\������
+" 日付フォーマットを yyyy/mm/dd(曜日) hh:mm:ss で表示する
 let g:netrw_timefmt="%Y/%m/%d(%a) %H:%M:%S"
-" �v���r���[�E�B���h�E�𐂒������ŕ\������
+" プレビューウィンドウを垂直分割で表示する
 let g:netrw_preview=1
-" �R�s�y�̎���F3�Ŏ��s�ł���悤�ɂ���B
+" コピペの時にF3で実行できるようにする。
 set pastetoggle=<F3>
-" �t�@�C����������Enter�����������ɉE���Ƀt�@�C�����J���悤�ɕ�������
+" ファイル検索時にEnterを押した時に右側にファイルを開くように分割する
 let g:netrw_browse_split = 4
 
 set backspace=indent,eol,start
 
-" theme��atom-dark�ɂ���
+" themeはatom-darkにする
 set t_Co=256
 colorscheme atom-dark-256
 

@@ -18,4 +18,3 @@ bashを使わずにbusyboxを使う様にしてください。
 
 * `setup_linux.sh` / `setup_mac.sh` / `setup_win.ps1` は、テーマのダウンロードと `.vimrc` のコピーだけを行う。プラグインのインストールはしない。
 * `setup_linux.sh` と `setup_mac.sh` は同一内容に保つこと。
-* `.vimrc` は Shift-JIS で書かれている。Edit/Write は使えないので、文字コードを保てるコマンド(`sed` など)で編集すること。
