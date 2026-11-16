@@ -3,18 +3,20 @@
 # スクリプトのディレクトリを取得
 SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 
-# テーマディレクトリの作成
+echo "[1/3] テーマディレクトリを作成: ~/.vim/colors"
 mkdir -p ~/.vim/colors
 
-# atom-dark-256テーマのダウンロード
+echo "[2/3] atom-dark-256テーマを確認"
 if [ -f ~/.vim/colors/atom-dark-256.vim ]; then
-    echo "atom-dark-256 theme is already installed. Skipping..."
+    echo "  インストール済みのためスキップ"
 else
-    curl -o ~/.vim/colors/atom-dark-256.vim \
-         https://raw.githubusercontent.com/gosukiwi/vim-atom-dark/refs/heads/master/colors/atom-dark-256.vim
+    echo "  ダウンロード中..."
+    curl -sS -o ~/.vim/colors/atom-dark-256.vim \
+         https://raw.githubusercontent.com/gosukiwi/vim-atom-dark/refs/heads/master/colors/atom-dark-256.vim || exit 1
+    echo "  ダウンロード完了"
 fi
 
-# .vimrcをコピー
+echo "[3/3] .vimrcをコピー: ~/.vimrc"
 cp "$SCRIPT_DIR/.vimrc" ~/.vimrc
 
-echo "Vim setup completed!"
+echo "完了: Vimのセットアップが終わりました"
